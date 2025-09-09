@@ -6,9 +6,14 @@
 </head>
 <body>
 <p>Welcome to Brightspace!</p>
-<form>
+<form action="/submit-forum-post" method="post">
+    <label for="title">Forum Post Title</label><br>
     <input type="text" id="title" name="title" required><br><br>
 
+    <label for="content">Forum Post Body</label><br>
+    <input type="text" id="content" name="content" required><br><br>
+
+    <input type="submit" value="submit">
 
 
 </form>
