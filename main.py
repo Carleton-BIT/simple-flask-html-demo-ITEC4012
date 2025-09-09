@@ -1,16 +1,26 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+number_of_bananas = 5
+
+pi = 3.141592653589793
+
+my_name = "James Brunet"
+
+fruits = {
+    "banana":5,
+    "kiwi":4,
+    "pear":3
+}
+
+if "apple" in fruits:
+    print(fruits["apple"])
+    print("THERE'S AN APPLE")
+else:
+    print("No apple for you")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+def c2f(c):
+    f = c*1.8 + 32
+    return f
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+print(c2f(-40))
