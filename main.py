@@ -1,26 +1,25 @@
+from flask import Flask, render_template, request
 
-number_of_bananas = 5
+app = Flask(__name__)
 
-pi = 3.141592653589793
+posts = []
 
-my_name = "James Brunet"
+@app.route('/')
+def home():
+    return render_template("index.html", posts=posts)
 
-fruits = {
-    "banana":5,
-    "kiwi":4,
-    "pear":3
-}
+@app.route('/posts')
+def posts_list():
+    return posts
 
-if "apple" in fruits:
-    print(fruits["apple"])
-    print("THERE'S AN APPLE")
-else:
-    print("No apple for you")
+@app.route('/submit-forum-post', methods=['POST'])
+def submit_forum_post():
+    title = request.form.get('title')
+    content = request.form.get('content')
+
+    posts.append([title, content])
+    return "You did it you submitted it"
 
 
-
-def c2f(c):
-    f = c*1.8 + 32
-    return f
-
-print(c2f(-40))
+if __name__=='__main__':
+    app.run(debug=True)
